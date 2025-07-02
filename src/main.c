@@ -15,11 +15,8 @@ void sig_handler(int) {  }
 
 int main(int argc, char* argv[], char* envp[]) {
 
-	// Do nothing if process is killed (if user wants to exit they can use the exit command)
-	{
-		signal(SIGINT, sig_handler);
-		signal(SIGTERM, sig_handler);
-	}
+	
+	signal(SIGINT, sig_handler);  // Do nothing if CRTL + C is pressed (if user wants to exit they can use the exit command)
 
 	// Main loop
 	while (true) {
